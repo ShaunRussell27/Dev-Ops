@@ -1,7 +1,7 @@
 #  Demon Slayer DevOps Pipeline
 # Student: Shaun Russell
 
-This repository is part of my DevOps module project for VIS Media — a fictional software division developing a new Demon Slayer game.  
+This repository is part of my DevOps module project  — software development for a new Demon Slayer game.  
 ---
 
 ##  Project Goals
