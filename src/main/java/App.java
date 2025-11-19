@@ -3,6 +3,9 @@
  * This program prints a welcome message and demonstrates
  * passing parameters into a method.
  */
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 public class App {
 
     /**
@@ -13,6 +16,13 @@ public class App {
      */
     public static void main(String[] args) {
         System.out.println("Welcome to the Demon Slayer API!");
+        // Log an info message instead of printing
+        logger.info("Welcome to the Demon Slayer API!");
+
+        // Optionally log at different levels
+        logger.debug("Debug: Application has started");
+        logger.warn("Warning: This is a demo application");
+        logger.error("Error: Just an example error log");
     }
 
     /**
@@ -21,6 +31,8 @@ public class App {
      * @return A String containing the welcome message.
      */
     public static String getMessage() {
+        return "Welcome to the Demon Slayer API!";
+        logger.info("getMessage() called");
         return "Welcome to the Demon Slayer API!";
     }
 }
