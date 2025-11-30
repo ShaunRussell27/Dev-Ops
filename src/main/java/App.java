@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
  * This program demonstrates logging and basic monitoring
  * using SLF4J and Micrometer.
  * 
- * @author Your Name
+ * @author ShaunRussell27
  * @version 1.0
  */
 public class App {
