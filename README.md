@@ -15,7 +15,10 @@ This repository is part of my DevOps module project  — software development fo
 ##  Tools & Technologies
 - **GitHub** – Version control & project management  
 - **GitHub Actions** – Automation / CI/CD  
-- **Java** – Example code and testing   
+- **Java** – Example code and testing
+- **Dependabot** - security checks
+- **GitHub pages** - auto-documentation
+- **Checkstyle** - enforcing coding standards
 
 
 
