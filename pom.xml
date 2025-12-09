@@ -10,8 +10,8 @@
     <packaging>jar</packaging>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -53,9 +53,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>3.14.1</version>
                 <configuration>
-                    <release>17</release>
+          <release>21</release>
                 </configuration>
             </plugin>
             <!-- JUnit test runner -->
@@ -83,7 +83,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.2.2</version>
+                <version>3.6.0</version>
                 <configuration>
                     <configLocation>google_checks.xml</configLocation>
                     <failOnViolation>true</failOnViolation>
