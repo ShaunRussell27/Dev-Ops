@@ -30,7 +30,7 @@ jobs:
     steps:
      
       # Step 1: Checkout repository code
-      # This pulls your repo into the runner
+      # This pulls repo into the runner
       # so Maven can read pom.xml and build it.
    
       - name: Checkout code
@@ -38,7 +38,7 @@ jobs:
 
    
       # Step 2: Install Java 17
-      # Required to compile and run your Java project.
+      # Required to compile and run  Java project.
       # "temurin" is the most common OpenJDK distribution.
       #
       # cache: 'maven' stores Maven dependencies
@@ -85,7 +85,7 @@ jobs:
 
      
       # Step 7: Upload Javadoc as an artifact
-      # Artifacts allow you to download the generated
+      # Artifacts allow  to download the generated
       # documentation from the Actions UI.
       # path: folder where Javadoc HTML files are stored.
       # name: artifact name that appears in GitHub.
@@ -112,3 +112,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+
