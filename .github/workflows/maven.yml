@@ -9,9 +9,9 @@ name: Java CI Pipeline
 
 on:
   push:
-    branches: [ "main", "dev" ]
+    branches: [ "main", "dev" , "DevBranch-(fixed)" ]
   pull_request:
-    branches: [ "main", "dev" ]
+    branches: [ "main", "dev" , "DevBranch-(fixed)" ]
 
 permissions:
   contents: read
@@ -30,7 +30,7 @@ jobs:
     steps:
      
       # Step 1: Checkout repository code
-      # This pulls repo into the runner
+      # This pulls  repo into the runner
       # so Maven can read pom.xml and build it.
    
       - name: Checkout code
@@ -47,7 +47,7 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '21'
           distribution: 'temurin'
           cache: 'maven'
 
@@ -85,7 +85,7 @@ jobs:
 
      
       # Step 7: Upload Javadoc as an artifact
-      # Artifacts allow  to download the generated
+      # Artifacts allow to download the generated
       # documentation from the Actions UI.
       # path: folder where Javadoc HTML files are stored.
       # name: artifact name that appears in GitHub.
@@ -112,4 +112,3 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-
