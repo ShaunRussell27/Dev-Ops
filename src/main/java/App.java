@@ -51,12 +51,10 @@ public class App {
 
     /**
      * Returns a welcome message.
-     * Logs the method call for monitoring purposes.
      *
      * @return A String containing the welcome message.
      */
     public static String getMessage() {
-        LOGGER.info("getMessage() called");
         return "Welcome to the Demon Slayer API!";
     }
 }
