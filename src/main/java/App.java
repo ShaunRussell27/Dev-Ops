@@ -56,7 +56,6 @@ public class App {
      * @return A String containing the welcome message.
      */
     public static String getMessage() {
-        logger.info("getMessage() called");
         return "Welcome to the Demon Slayer API!";
     }
 }
