@@ -14,12 +14,12 @@ import org.slf4j.LoggerFactory;
  */
 public class App {
 
-    private static final Logger logger = LoggerFactory.getLogger(App.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
 
     // Micrometer registry and metrics
-    private static final SimpleMeterRegistry registry = new SimpleMeterRegistry();
-    private static final Counter invocationCounter = registry.counter("app.invocations");
-    private static final Timer executionTimer = registry.timer("app.execution.time");
+    private static final SimpleMeterRegistry REGISTRY = new SimpleMeterRegistry();
+    private static final Counter INVOCATION_COUNTER = REGISTRY.counter("app.invocations");
+    private static final Timer EXECUTION_TIMER = REGISTRY.timer("app.execution.time");
 
     /**
      * The entry point of the Demon Slayer API demo.
@@ -30,23 +30,23 @@ public class App {
      */
     public static void main(String[] args) {
 
-        logger.info("Application started");
+        LOGGER.info("Application started");
 
         // Increment invocation count
-        invocationCounter.increment();
+        INVOCATION_COUNTER.increment();
 
         // Time the execution of the welcome message logic
-        executionTimer.record(() -> {
-            logger.info("Welcome to the Demon Slayer API!");
+        EXECUTION_TIMER.record(() -> {
+            LOGGER.info("Welcome to the Demon Slayer API!");
             // Simulate work or business logic here
         });
 
         // Print current metrics to console
-        registry.getMeters().forEach(meter -> {
-            logger.info("Meter: " + meter.getId().getName() + " - Count: " + meter.measure());
+        REGISTRY.getMeters().forEach(meter -> {
+            LOGGER.info("Meter: " + meter.getId().getName() + " - Count: " + meter.measure());
         });
 
-        logger.info("Application finished");
+        LOGGER.info("Application finished");
     }
 
     /**
@@ -56,7 +56,7 @@ public class App {
      * @return A String containing the welcome message.
      */
     public static String getMessage() {
-        logger.info("getMessage() called");
+        LOGGER.info("getMessage() called");
         return "Welcome to the Demon Slayer API!";
     }
 }
