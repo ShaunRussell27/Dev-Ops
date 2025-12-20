@@ -3,7 +3,12 @@
           "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
-  <module name="FileTabCharacter"/>
+  <!-- Replace FileTabCharacter with RegexpSingleline -->
+  <module name="RegexpSingleline">
+    <property name="format" value="\t"/>
+    <property name="message" value="Line contains a tab character"/>
+  </module>
+  
   <module name="TreeWalker">
     <module name="AnnotationUseStyle"/>
     <module name="AvoidStarImport"/>
