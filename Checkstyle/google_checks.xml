@@ -3,6 +3,7 @@
           "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
+  <module name="FileTabCharacter"/>
   <module name="TreeWalker">
     <module name="AnnotationUseStyle"/>
     <module name="AvoidStarImport"/>
@@ -13,7 +14,6 @@
     </module>
     <module name="EmptyCatchBlock"/>
     <module name="EqualsHashCode"/>
-    <module name="FileTabCharacter"/>
     <module name="HiddenField"/>
     <module name="IllegalImport"/>
     <module name="ImportOrder"/>
