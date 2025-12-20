@@ -15,12 +15,18 @@ import org.junit.jupiter.api.Test;
  */
 public class AppTest {
 
+    /**
+     * Setup method that runs before each test.
+     */
     @BeforeEach
     void setUp() {
         // Setup runs before each test
         System.out.println("Running test...");
     }
 
+    /**
+     * Tests that getMessage returns the correct welcome message.
+     */
     @Test
     @DisplayName("Should return correct welcome message")
     void testGetMessage() {
@@ -31,6 +37,9 @@ public class AppTest {
             "getMessage() should return the welcome message");
     }
 
+    /**
+     * Tests that getMessage never returns null.
+     */
     @Test
     @DisplayName("Should return non-null message")
     void testGetMessageNotNull() {
@@ -38,14 +47,20 @@ public class AppTest {
         assertNotNull(message, "getMessage() should never return null");
     }
 
+    /**
+     * Tests that getMessage returns a non-empty string.
+     */
     @Test
     @DisplayName("Should return non-empty message")
     void testGetMessageNotEmpty() {
         String message = App.getMessage();
-        assertEquals(false, message.isEmpty(), 
+        assertFalse(message.isEmpty(), 
             "getMessage() should return a non-empty string");
     }
 
+    /**
+     * Tests that the main method executes without throwing exceptions.
+     */
     @Test
     @DisplayName("Main method should execute without throwing exceptions")
     void testMainMethodExecution() {
@@ -54,6 +69,9 @@ public class AppTest {
         }, "main() should execute without throwing any exceptions");
     }
 
+    /**
+     * Tests that the main method handles null arguments gracefully.
+     */
     @Test
     @DisplayName("Main method should handle null arguments")
     void testMainMethodWithNullArgs() {
@@ -62,18 +80,24 @@ public class AppTest {
         }, "main() should handle null arguments gracefully");
     }
 
+    /**
+     * Tests that the message contains expected keywords.
+     */
     @Test
     @DisplayName("Message should contain expected keywords")
     void testMessageContent() {
         String message = App.getMessage();
-        assertEquals(true, message.contains("Demon Slayer"), 
+        assertTrue(message.contains("Demon Slayer"), 
             "Message should contain 'Demon Slayer'");
-        assertEquals(true, message.contains("API"), 
+        assertTrue(message.contains("API"), 
             "Message should contain 'API'");
     }
 
     // ========== Performance Tests ==========
 
+    /**
+     * Tests getMessage performance under load conditions.
+     */
     @Test
     @DisplayName("Test getMessage performance under load")
     void testMessagePerformance() {
@@ -98,6 +122,9 @@ public class AppTest {
             "getMessage should execute in less than 1000ns, but took " + avgTimeNanos + "ns");
     }
 
+    /**
+     * Tests getMessage consistency across multiple repeated calls.
+     */
     @RepeatedTest(10)
     @DisplayName("Test getMessage consistency across multiple calls")
     void testMessageConsistency() {
@@ -107,6 +134,11 @@ public class AppTest {
         assertFalse(result.isEmpty());
     }
 
+    /**
+     * Tests concurrent access performance with multiple threads.
+     *
+     * @throws InterruptedException if thread execution is interrupted
+     */
     @Test
     @DisplayName("Test concurrent access performance")
     void testConcurrentAccess() throws InterruptedException {
@@ -141,6 +173,9 @@ public class AppTest {
             "Concurrent test should complete in less than 5 seconds");
     }
 
+    /**
+     * Tests memory efficiency of repeated getMessage calls.
+     */
     @Test
     @DisplayName("Test memory efficiency")
     void testMemoryEfficiency() {
