@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
  * Unit tests for the App class.
  * Tests the core functionality including message retrieval
  * and application execution.
+ * @author ShaunRussell27
+ * @version 1.0
  */
 public class AppTest {
 
