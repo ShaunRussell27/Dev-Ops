@@ -126,12 +126,13 @@
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>10.12.4</version>
+                        <version>10.20.2</version>
                     </dependency>
                 </dependencies>
                 <configuration>
-                    <configLocation>Checkstyle/google_checks.xml</configLocation>
+                    <configLocation>${project.basedir}/Checkstyle/google_checks.xml</configLocation>
                     <failOnViolation>true</failOnViolation>
+                    <consoleOutput>true</consoleOutput>
                 </configuration>
                 <executions>
                     <execution>
